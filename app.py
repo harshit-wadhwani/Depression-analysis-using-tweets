@@ -91,10 +91,10 @@ st.header("Twitter Sentiment Analysis")
 st.subheader("Enter you username : ")
 
 username = st.text_input("username", max_chars=100)
-if st.button("Predict"):
-    url = "https://twitter.com/" + username
+if st.button("Predict 🔥"):
+    url = "https://twitter.com/" + username + "/"
 
-    st.subheader("@" + username + " is " +str(predict(username)) + "%depressed")
+    st.subheader("@" + username + " is " +str(predict(username)) + "% depressed")
     st.success('Prediction Done !!! :tada:')
     word_cloud(username)
     image = Image.open('stylecloud.png')
@@ -102,5 +102,6 @@ if st.button("Predict"):
     col1.header("Word Cloud")
     col1.image(image)
     tweets = pd.read_csv("tweets.csv")
-    col2.header("Tweets")
+    col2.header("Tweets")  
+    col2.markdown("Last 100 tweets of "+f"[{username}]({url})" )
     col2.dataframe(tweets)
