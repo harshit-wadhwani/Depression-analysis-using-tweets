@@ -11,7 +11,21 @@ import stylecloud
 import matplotlib.pyplot as plt
 from PIL import Image
 
-@st.cache
+
+st.set_page_config(page_title='Twitter Sentiment Analysis', layout='wide', page_icon=":bird:")
+
+
+@st.experimental_singleton
+def retrive():
+    path = "trained_model.h5"
+    model = tf.keras.models.load_model(path, custom_objects={'KerasLayer':hub.KerasLayer})
+    return model
+
+
+model = retrive()
+
+
+
 def predict(username):
     query = "(from:" + username + ")"
     tweets =[]
@@ -48,8 +62,6 @@ def predict(username):
     return round(fl, 2)
 
 
-path = "trained_model.h5"
-model = tf.keras.models.load_model(path, custom_objects={'KerasLayer':hub.KerasLayer})
 
 
 def word_cloud(username):
@@ -73,18 +85,24 @@ def word_cloud(username):
     )
 
 
-st.set_page_config(page_title='Twitter Sentiment Analysis', layout='wide', page_icon=":bird:")
 
-st.subheader("Twitter Sentiment Analysis")
-st.title("trying ")
-st.write("enter username")
+
+st.header("Twitter Sentiment Analysis")
+st.subheader("Enter you username : ")
+
 username = st.text_input("username", max_chars=100)
+if st.button("Predict"):
+    url = "https://twitter.com/" + username
 
-if st.button("predict"):
+    st.subheader("@" + username + " is " +str(predict(username)) + "%depressed")
     st.success('Prediction Done !!! :tada:')
-
-    st.write("@" + username + " is " +str(predict(username)) + "%depressed")
-    st.write("word cloud")
     word_cloud(username)
     image = Image.open('stylecloud.png')
-    st.image(image, caption='tweets wordcloud')
+    col1, col2 = st.columns(2)
+    col1.header("Word Cloud")
+    col1.image(image)
+    tweets = pd.read_csv("tweets.csv")
+    col2.header("Tweets")
+    col2.write("Link to user's tweets " + url)   
+    col2.markdown("Link to user's tweets :(%s) "%url)
+    col2.dataframe(tweets)
