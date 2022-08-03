@@ -103,6 +103,4 @@ if st.button("Predict"):
     col1.image(image)
     tweets = pd.read_csv("tweets.csv")
     col2.header("Tweets")
-    col2.write("Link to user's tweets " + url)   
-    col2.markdown("Link to user's tweets :(%s) "%url)
     col2.dataframe(tweets)
