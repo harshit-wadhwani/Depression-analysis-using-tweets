@@ -1,0 +1,10 @@
+snscrape
+pandas
+tensorflow
+tensorflow_hub
+tensorflow_text
+keras
+numpy
+re
+stylecloud
+matplotlib.pyplot
