@@ -6,4 +6,4 @@ tensorflow_text
 keras
 numpy
 stylecloud
-matplotlib.pyplot
+matplotlib
