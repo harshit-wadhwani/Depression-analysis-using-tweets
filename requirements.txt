@@ -1,10 +1,13 @@
-snscrape==0.4.3.20220106
+keras==2.9.0
+matplotlib==3.5.1
+numpy==1.21.5
 pandas==1.4.2
-pyyaml h5py
+Pillow==9.2.0
+snscrape==0.4.3.20220106
+streamlit==1.11.1
+stylecloud==0.5.2
+pyyaml==6.0
+h5py==2.10.0
 tensorflow==2.9.1
 tensorflow_hub==0.12.0
 tensorflow_text==2.9.0
-keras==2.9.0
-numpy==1.21.5
-stylecloud==0.5.2
-matplotlib==3.5.1
