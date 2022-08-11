@@ -16,17 +16,17 @@ st.set_page_config(page_title='Twitter Sentiment Analysis', layout='wide', page_
 
 
 @st.experimental_singleton
-def retrive():
+def loading_model():
     path = "trained_model.h5"
     model = tf.keras.models.load_model(path, custom_objects={'KerasLayer':hub.KerasLayer})
     return model
 
 
-model = retrive()
 
 
 
-def predict(username):
+
+def predict(username ):
     query = "(from:" + username + ")"
     tweets =[]
     limit = 100
@@ -84,17 +84,19 @@ def word_cloud(username):
                           custom_stopwords=['RT','THE','IS','WITH','ON','THIS','HTTPS','CO','TO','AND','OF','IT','MY','FOR','IN','a', 'about', 'above', 'after', 'again', 'against', 'ain', 'all', 'am', 'an', 'and', 'any', 'are', 'aren', "aren't", 'as', 'at', 'be', 'because', 'been', 'before', 'being', 'below', 'between', 'both', 'but', 'by', 'can',          'couldn', "couldn't", 'd', 'did', 'didn', "didn't", 'do', 'does', 'doesn', "doesn't", 'doing', 'don', "don't", 'down', 'during', 'each', 'few', 'for', 'from', 'further', 'had', 'hadn', "hadn't", 'has', 'hasn', "hasn't", 'have', 'haven', "haven't", 'having', 'he',                          'her', 'here',           'hers', 'herself', 'him', 'himself', 'his', 'how',          'i',                               'if', 'in', 'into', 'is', 'isn', "isn't", 'it', "it's", 'its', 'itself', 'just', 'll', 'm', 'ma', 'me', 'mightn', "mightn't", 'more', 'most', 'mustn', "mustn't", 'my', 'myself', 'needn', "needn't", 'no', 'nor', 'not', 'now', 'o', 'of', 'off', 'on', 'once', 'only', 'or', 'other', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 're', 's', 'same', 'shan', "shan't", 'she',                    "she's", 'should', "should've", 'shouldn', "shouldn't", 'so', 'some', 'such', 't', 'than', 'that', "that'll",           'the', 'their', 'theirs', 'them', 'themselves', 'then', 'there',            'these', 'they',                                            'this', 'those', 'through', 'to', 'too', 'under', 'until', 'up', 've', 'very', 'was', 'wasn', "wasn't", 'we',                                    'were', 'weren', "weren't", 'what',           'when',           'where',            'which', 'while', 'who',          'whom', 'why', 'will',          'with', 'won', "won't", 'wouldn', "wouldn't", 'y', 'you', "you'd", "you'll", "you're", "you've", 'your', 'yours', 'yourself', 'yourselves']
     )
 
-
-
+import time
 
 st.header("Twitter Sentiment Analysis")
 st.subheader("Enter you username : ")
+st.info("Enter the username without @, For example if username is @elonmusk then enter elonmusk")
+model = loading_model()
+username = st.text_input("Username", max_chars=100)
 
-username = st.text_input("username", max_chars=100)
+
+
 if st.button("Predict 🔥"):
     url = "https://twitter.com/" + username + "/"
-
-    st.subheader("@" + username + " is " +str(predict(username)) + "% depressed")
+    st.subheader("@" + username + " is " + str(predict(username)) + "% depressed")
     st.success('Prediction Done !!! :tada:')
     word_cloud(username)
     image = Image.open('stylecloud.png')
@@ -104,4 +106,5 @@ if st.button("Predict 🔥"):
     tweets = pd.read_csv("tweets.csv")
     col2.header("Tweets")  
     col2.markdown("Last 100 tweets of "+f"[{username}]({url})" )
-    col2.dataframe(tweets)
+    col2.dataframe(tweets, width=1200)
+    st.balloons()
