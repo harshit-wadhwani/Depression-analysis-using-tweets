@@ -1,5 +1,6 @@
 snscrape==0.4.3.20220106
 pandas==1.4.2
+pyyaml h5py
 tensorflow==2.9.1
 tensorflow_hub==0.12.0
 tensorflow_text==2.9.0
