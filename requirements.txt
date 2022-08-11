@@ -7,3 +7,4 @@ keras
 numpy
 stylecloud
 matplotlib
+h5py
