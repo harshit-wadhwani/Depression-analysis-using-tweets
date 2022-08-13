@@ -303,7 +303,7 @@ pyarrow                ==           8.0.0
 pyasn1                ==            0.4.8
 pyasn1-modules         ==           0.2.8
 pycares                ==           4.1.2
-pycodestyle             ==          2.7.0
+pycodestyle             
 pycosat                  ==         0.6.3
 pycparser               ==          2.21
 pyct                    ==          0.4.8
