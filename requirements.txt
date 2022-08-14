@@ -1,3 +1,4 @@
+--upgrade pip
 # keras#2.9.0
 # matplotlib#3.5.1
 # numpy#1.21.5
