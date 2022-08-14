@@ -23,4 +23,4 @@ streamlit run app.py
 
 ## Screenshots
 
-![App Screenshot](harshit-wadhwani/Depression-analysis-using-tweets/screenshots/Screenshot 2022-08-15 020344.jpg)
+![App Screenshot](screenshots/Screenshot%202022-08-15%20020344.jpg)
