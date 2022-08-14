@@ -22,5 +22,12 @@ streamlit run app.py
 ```
 
 ## Screenshots
+UI 
+![App Screenshot](screenshots/ui.jpg)
 
-![App Screenshot](screenshots/Screenshot%202022-08-15%20020344.jpg)
+some predictions 
+
+![App Screenshot](screenshots/pred1.jpg)
+![App Screenshot](screenshots/pred2.jpg)
+![App Screenshot](screenshots/pred3.jpg)
+![App Screenshot](screenshots/pred4.jpg)
