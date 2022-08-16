@@ -1,6 +1,6 @@
 # Depression Analysis using tweets
 
-This app extracts last 100 tweets of the user by their username and extracts their tweets, it than predict the user Depression
+This app extracts last 100 tweets of the user by their username, it than predict the user Depression, it also creates a word cloud of their tweets.
 
 
 
