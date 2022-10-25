@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ```
 [python version 3.8 Recommended]
 
-you can also download the trained_model.h5 file from the google drive [link](https://drive.google.com/file/d/15AH8GdrOXOWNtaHxUR9ojskWbWebQA3o/view?usp=sharing)  in case the above trained_model.h5 file does not work. 
+you must download the trained_model.h5 file from the google drive [link](https://drive.google.com/file/d/15AH8GdrOXOWNtaHxUR9ojskWbWebQA3o/view?usp=sharing) to run the project successfully.
 ## Run Locally 
 Go to the Depression Analysis using tweets folder and run 
 
