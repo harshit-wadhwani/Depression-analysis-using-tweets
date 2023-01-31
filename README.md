@@ -31,3 +31,17 @@ some predictions
 ![App Screenshot](screenshots/pred2.jpg)
 ![App Screenshot](screenshots/pred3.jpg)
 ![App Screenshot](screenshots/pred4.jpg)
+
+## Author
+
+- [@harshit-wadhwani](https://github.com/harshit-wadhwani)
+
+
+## 🔗 Links
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/harshitwadhwani/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/akadaemonium_)
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at harshit4work@gmail.com
