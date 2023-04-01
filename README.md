@@ -1,5 +1,7 @@
 # Depression Analysis using tweets
 
+NOTE :- Twiter api has been deprecated and so is this project, that means it does not work anymore.
+
 This app extracts last 100 tweets of the user by their username, it than predict the user Depression, it also creates a word cloud of their tweets.
 
 
